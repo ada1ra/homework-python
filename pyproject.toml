@@ -1,0 +1,78 @@
+# ruff.toml
+target-version = "py311"
+line-length = 100
+
+# включить все основные правила
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # Pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "YTT", # flake8-2020
+    "S",   # flake8-bandit
+    "A",   # flake8-builtins
+    "COM", # flake8-commas
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "T10", # flake8-debugger
+    "EM",  # flake8-errmsg
+    "EXE", # flake8-executable
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # flake8-logging-format
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "PT",  # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SLF", # flake8-self
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "TCH", # flake8-type-checking
+    "INT", # flake8-gettext
+    "ARG", # flake8-unused-arguments
+    "FBT", # flake8-boolean-trap
+    "B",   # flake8-bugbear
+    "AIR", # flake8-airflow
+    "PERF", # flake8-perflint
+]
+
+# игнорировать правила
+ignore = [
+    "E501",  # line too long - handled by formatter
+    "S101",  # assert used - ok in tests
+    "T201",  # print found - sometimes needed
+    "COM812", # trailing comma missing - not always required
+]
+
+# настройки для конкретных файлов
+[per-file-ignores]
+"__init__.py" = ["F401"]  # Unused imports allowed in __init__.py
+"tests/**" = ["S101", "SLF001"]  # Allow assert and self in tests
+"**/migrations/**" = ["ALL"]  # Ignore all in migrations
+
+# настройки форматтера
+[format]
+indent-style = "space"
+quote-style = "double"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+# настройки для конкретных правил
+[flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "double"
+
+[flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[isort]
+known-first-party = ["myapp"]
+lines-after-imports = 2
+combine-as-imports = true
+split-on-trailing-comma = true
