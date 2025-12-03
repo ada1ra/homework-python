@@ -50,4 +50,6 @@ result = change()
 if result is None:
     print("-42!")
 else:
-    print(f"{result[0]} монет по {COIN_1}, {result[1]} монет по {COIN_2}, {result[2]} монет по {COIN_3}")
+    print(
+        f"{result[0]} монет по {COIN_1}, {result[1]} монет по {COIN_2} и {result[2]} монет по {COIN_3}."
+    )
