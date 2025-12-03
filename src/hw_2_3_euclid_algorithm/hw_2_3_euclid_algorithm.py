@@ -17,4 +17,3 @@ gcd, x, y = extended_gcd(a, b)
 print(f"НОД({a}, {b}) = {gcd}")
 print(f"Коэффициенты: x = {x}, y = {y}")
 print(f"Проверка: ({a})*({x}) + ({b})*({y}) = {a * x + b * y}")
-
