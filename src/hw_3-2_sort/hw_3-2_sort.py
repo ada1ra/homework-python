@@ -1,5 +1,6 @@
 numbers = [1, 2, 3, 9, 3, 8, 478, 7]
 
+
 def bubble_sort(nums):
     # значение для запуска цикла
     swap = True
@@ -14,6 +15,6 @@ def bubble_sort(nums):
                 # перезапускаем цикл, для ещё одной проверки
                 swap = True
 
+
 bubble_sort(numbers)
 print(numbers)
-

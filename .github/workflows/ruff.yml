@@ -1,11 +1,6 @@
 name: Ruff Code Quality Check
 
-on:
-  push:
-    branches: [ main, master, develop, feature/** ]
-  pull_request:
-    branches: [ main, master, develop ]
-
+on: [ push, pull_request ]
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -30,3 +25,11 @@ jobs:
       - name: Install Ruff
         run: |
           pip install ruff
+
+      - name: Run Ruff check
+        run: |
+          ruff check . --output-format=github
+
+      - name: Check code formatting
+        run: |
+          ruff format --check . --diff
