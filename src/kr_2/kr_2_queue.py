@@ -138,7 +138,7 @@ class BinomialHeap:
         return min_node
 
 
-    def _decrease(self, node, value):
+    def decrease(self, node, value):
         """Уменьшает ключ элемента, присваивая новое значение"""
         if value > node.key:
             return

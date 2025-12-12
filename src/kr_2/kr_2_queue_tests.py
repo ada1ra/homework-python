@@ -1,8 +1,7 @@
 """
 Запуск: pytest kr_2_queue_tests.py -v
 """
-import pytest
-from kr_2_queue import BinomialHeap, BinomialNode
+from kr_2_queue import BinomialHeap
 
 class TestBasicOperations:
     """Проверка базовых операций вставки, поиска и извлечения минимума"""
